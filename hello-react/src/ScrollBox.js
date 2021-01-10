@@ -7,7 +7,7 @@ class ScrollBox extends Component {
     }
     render() {
         const style = {
-            vorder: '1px solid black',
+            border: '1px solid black',
             height: '300px',
             width: '300px',
             overflow: 'auto',

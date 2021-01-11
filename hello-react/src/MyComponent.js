@@ -23,7 +23,7 @@ MyComponent.defaultProps = {
 MyComponent.propTypes = {
     name: PropTypes.string,
     favoriteNumber: PropTypes.number.isRequired
-    //값이 지정되지 않으면 경고
+    /*값이 지정되지 않으면 경고*/
 };
 
 export default MyComponent;

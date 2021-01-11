@@ -1,4 +1,4 @@
-import Preact, { Component} from 'react';
+import Preact, { Component } from 'react';
 
 class ScrollBox extends Component {
     scrollToBottom = () => {
@@ -11,20 +11,20 @@ class ScrollBox extends Component {
             height: '300px',
             width: '300px',
             overflow: 'auto',
-            position: 'realtive'
+            position: 'relative'
         };
 
         const innerStyle = {
-            width: '100px',
+            width: '100%',
             height: '650px',
-            backgraound: 'linear-gradient(white, black)'
+            background: 'linear-gradient(white, black)'
         }
         return (
             <div
                 style = {style}
                 ref={(ref) => {this.box=ref}}>
-                    <div style={innerStyle}/>
-                </div>
+                <div style={innerStyle}/>
+            </div>
         );
     }
 }

@@ -9,10 +9,11 @@ import LifeCycleSample from './LifeCycleSample';
 import ErrorBoundary from './ErrorBoundary';
 import Info from './Info';
 import Counter from './Counter';
+import Average from './Average';
 
 
 const App = () => {
-  return <Counter />;
+  return <Average />;
 };
 
 export default App;

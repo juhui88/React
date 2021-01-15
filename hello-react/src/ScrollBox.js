@@ -1,9 +1,14 @@
 import Preact, { Component } from 'react';
 
 class ScrollBox extends Component {
-    scrollToBottom = () => {
+    scrollChange = (param) => {
         const { scrollHeight , clientHeight} = this.box;
-        this.box.scrollTop = scrollHeight - clientHeight;
+        if(param==='u'){
+            this.box.scrollTop = scrollHeight - clientHeight;
+        }
+        else {
+            this.box.scrollTop=0;
+        }
     }
     render() {
         const style = {

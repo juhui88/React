@@ -1,48 +1,13 @@
-import React, {useState, Component} from 'react';
-import MyComponent from './MyComponent';
-import Say from './Say';
-import EventPractice from './EventPractice';
-import ValidationSample from './ValidationSample';
-import ScrollBox from './ScrollBox';
-import IterationSample from './IterationSample';
-import LifeCycleSample from './LifeCycleSample';
-import ErrorBoundary from './ErrorBoundary';
-import Info from './Info';
-import Counter from './Counter';
-import Average from './Average';
+import logo from './logo.svg';
+import './App.css';
+import React, {Component} from 'react';
+import SassComponent from './Sass Component';
 
 class App extends Component {
-
-  state =  {
-    upDown: 'u',
-    value:' TO Bottom',
-  }
-
-  upOrDown = () => {
-    if(this.state.upDown==='u'){
-      this.setState({
-        upDown: 'd',
-        value: 'To Top',
-      });
-    }
-    else {
-      this.setState({
-        upDown: 'u',
-        value: 'To Bottom',
-      });
-    }
-  }
-
-  render() {
+  render () {
     return (
       <div>
-        <ScrollBox ref={ref => (this.scrollBox = ref)} />
-        <button onClick={() => {
-          this.scrollBox.scrollChange(this.state.upDown);
-          this.upOrDown();
-        }}>
-          이동
-        </button>
+        <SassComponent />
       </div>
     );
   }

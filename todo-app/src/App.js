@@ -1,7 +1,7 @@
-import React, {useState, useRef, useCallback} from 'react';
-import TodoTemplate from './components/TodoTemplate'
-import TodoInsert from './components/TodoInsert'
-import TodoList from './components/TodoList'
+import React, { useState, useRef, useCallback, useEffect } from 'react';
+import TodoTemplate from './components/TodoTemplate';
+import TodoInsert from './components/TodoInsert';
+import TodoList from './components/TodoList';
 
 const App = () => {
   const [todos, setTodos] = useState([
@@ -12,7 +12,7 @@ const App = () => {
     },
     {
       id: 2,
-      text: '컴포넌트 스타일 해 보기',
+      text: '컴포넌트 스타일링해 보기',
       checked: true,
     },
     {
@@ -22,8 +22,8 @@ const App = () => {
     },
   ]);
 
-  //고윳값으로 사용될 id
-  //ref를 사용하여 변수 담기
+  // 고유 값으로 사용 될 id
+  // ref 를 사용하여 변수 담기
   const nextId = useRef(4);
 
   const onInsert = useCallback(
@@ -34,35 +34,47 @@ const App = () => {
         checked: false,
       };
       setTodos(todos.concat(todo));
-      nextId.current += 1; // nextId 1씩 더하기
+      nextId.current += 1; // nextId 1 씩 더하기
     },
     [todos],
   );
-  
-  const onRemove = useCallback (
+
+  const onRemove = useCallback(
     id => {
       setTodos(todos.filter(todo => todo.id !== id));
     },
     [todos],
-  )
+  );
 
-  const onToggle = useCallback (
+  const onToggle = useCallback(
     id => {
       setTodos(
         todos.map(todo =>
-          todo.id===id ? {...todo, checked: !todo.checked} : todo,
-          ),
+          todo.id === id ? { ...todo, checked: !todo.checked } : todo,
+        ),
       );
     },
     [todos],
   );
+
+  useEffect (() => {
+    var num = 0;
+    for (var i = 0; i< todos.length; i++) {
+      if(todos[i].checked === true) {
+        num +=1
+        if(num === todos.length) {
+          alert("축하합니다");
+        }
+      }
+    }
+  })
+
   return (
     <TodoTemplate>
-      <TodoInsert onInsert={onInsert}/>
+      <TodoInsert onInsert={onInsert} />
       <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
     </TodoTemplate>
   );
-  
 };
 
 export default App;

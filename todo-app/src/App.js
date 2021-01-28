@@ -1,18 +1,14 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import Template from './components/Template';
 import Comments from './components/Comments';
-import img from './어이없음.jpg'
+import img from './고앵이.jpg'
 import Like from './components/Like'
 import './App.css'
 
 const App = () => {
   return (
     <Template>
-      <img 
-      src={img}
-      width='500'
-      height='500' 
-      />
+      <img src={img}/>
       <Like />
       <Comments />
     </Template>

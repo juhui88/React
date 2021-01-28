@@ -1,4 +1,4 @@
-.TodoTemplate {
+.Template {
   width: 80rem;
   //width가 주어진 상태에서 좌우 중앙 정렬;
   margin-left: auto;
@@ -8,10 +8,10 @@
   overflow: hidden;
 
   .app-title {
-    background: green;
+    background: rgb(35, 165, 104);
     color: white;
     height: 4rem;
-    font-size: 1.5rem;
+    font-size: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;

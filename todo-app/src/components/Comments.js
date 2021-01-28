@@ -1,5 +1,5 @@
 import React, {useState, useCallback} from 'react';
-import {MdAdd} from  'react-icons/md';
+import {FaRegCommentDots} from  'react-icons/fa';
 import {BsFillTrashFill} from 'react-icons/bs'
 import './Comments.scss'
 
@@ -30,27 +30,35 @@ function Comments() {
           [...state.slice(0,idx),...state.slice(idx+1)]
       );
     }
+    function handleRemove(idx) {
+      //setState(spread, slice)
+      setState(
+        [...state.slice(0,idx),...state.slice(idx+1)]
+    );
+  }
 
     return (
         <div className='Comments'>
-          <input
-            placeholder="댓글을 입력하세요"
-            value={val}
-            onChange={handleOnChange}
-            onKeyPress={handleOnKeyPress}
-          />
-          <button type='submit' onClick={handleOnSubmit}>
-            <MdAdd/>
-          </button>
-          {state.map((e, idx) => (
-            <div className = 'comment' key={idx}>
+          <div className="gma">
+            <input
+              placeholder="댓글을 입력하세요"
+              value={val}
+              onChange={handleOnChange}
+              onKeyPress={handleOnKeyPress}
+            />
+            <button type='submit' onClick={handleOnSubmit}>
+              <FaRegCommentDots/>
+            </button>
+          </div>
+          <div className='comment'>
+            {state.map((e, idx) => (
+            <div key={idx}>
               <span>{e}</span>
-              &nbsp;
-              <button onClick={() => handleRemove(idx)}>
-                  <BsFillTrashFill/>
-                </button> 
+              <button onClick={() => handleRemove(idx)}><BsFillTrashFill/></button>
             </div>
           ))}
+          </div>
+          
         </div>
       );
 }

@@ -1,13 +1,14 @@
 import React from 'react';
 import './Template.scss';
+import {AiOutlinePicture} from 'react-icons/ai'
 
-const TodoTemplate = ({children}) => {
+const Template = ({children}) => {
     return (
-        <div className="TodoTemplate">
-            <div className="app-title">웹 페이지 구현</div>
+        <div className="Template">
+            <div className="app-title"><AiOutlinePicture/></div>
             <div className="content">{children}</div>
         </div>
     );
 };
 
-export default TodoTemplate;
+export default Template;

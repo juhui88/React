@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState} from 'react';
 import {FaRegCommentDots} from  'react-icons/fa';
 import {BsFillTrashFill} from 'react-icons/bs'
 import './Comments.scss'
@@ -14,28 +14,19 @@ function Comments() {
       }
     
     function handleOnSubmit() {
-        //setState
         setState([val,...state]);
-        //setValue
         setValue('');
       }
     
     function handleOnChange(e) {
-        //setValue
         setValue(e.target.value);
       }
       function handleRemove(idx) {
-        //setState(spread, slice)
         setState(
           [...state.slice(0,idx),...state.slice(idx+1)]
       );
     }
-    function handleRemove(idx) {
-      //setState(spread, slice)
-      setState(
-        [...state.slice(0,idx),...state.slice(idx+1)]
-    );
-  }
+  
 
     return (
         <div className='Comments'>
@@ -53,7 +44,7 @@ function Comments() {
           <div className='comment'>
             {state.map((e, idx) => (
             <div key={idx}>
-              <span>{e}</span>
+              <span>↳ {e}</span>
               <button onClick={() => handleRemove(idx)}><BsFillTrashFill/></button>
             </div>
           ))}

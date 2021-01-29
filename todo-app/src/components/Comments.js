@@ -27,7 +27,6 @@ function Comments() {
       );
     }
   
-
     return (
         <div className='Comments'>
           <div className="gma">

@@ -7,12 +7,13 @@ class SelectColors extends Component {
   static contextType = ColorContext;
 
   handleSetColor = color => {
-    this.context.actions.setColor(color);
+    this.context.actions.setColor(getRandomColor());
   };
 
   handleSetSubcolor = subcolor => {
     this.context.actions.setSubcolor(subcolor);
   };
+
 
   render() {
     return (

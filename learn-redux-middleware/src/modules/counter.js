@@ -3,11 +3,13 @@ import { delay, put, takeLatest, select, throttle } from 'redux-saga/effects';
 
 const INCREASE = 'counter/INCREASE';
 const DECREASE = 'counter/DECREASE';
+const CLICK = 'counter/CLICK';
 const INCREASE_ASYNC = 'counter/INCREASE_ASYNC';
 const DECREASE_ASYNC = 'counter/DECREASE_ASYNC';
 
 export const increase = createAction(INCREASE);
 export const decrease = createAction(DECREASE);
+export const click = 
 // 마우스 클릭 이벤트가 payload 안에 들어가지 않도록 () => undefined 를 두번째 파라미터로 넣어줍니다.
 export const increaseAsync = createAction(INCREASE_ASYNC, () => undefined);
 export const decreaseAsync = createAction(DECREASE_ASYNC, () => undefined);

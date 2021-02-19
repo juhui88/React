@@ -5,5 +5,13 @@
   "license": "MIT",
   "dependencies": {
     "koa": "^2.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "nodemon": "^1.18.11"
+  },
+  "scripts": {
+    "start": "node src",
+    "start:dev": "nodemon --watch src/ src/ index.js"
   }
 }
